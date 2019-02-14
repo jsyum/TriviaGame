@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+  padding: 10px;
+}
+
+body {
+  background-color: #fffacd;
+  width: 100%;
+}
+
+.gudetama {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+#startbutton {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#questionsdiv {
+  text-align: center;
+}
