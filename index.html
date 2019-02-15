@@ -43,15 +43,24 @@
           </button>
           <!--Radio Buttons-->
           <div id="questionsdiv" style="display:none">
-            <label class="radio-inline text-center"
-              ><input type="radio" name="optradio" checked />Option 1</label
-            >
-            <label class="radio-inline text-center"
-              ><input type="radio" name="optradio" />Option 2</label
-            >
-            <label class="radio-inline text-center"
-              ><input type="radio" name="optradio" />Option 3</label
-            >
+            Ramen is considered the specialized cuisine of which country?
+            <div id="radiobuttons">
+              <label class="radio-inline text-center"
+                ><input type="radio" name="optradio" id="china" /> China
+              </label>
+              <label class="radio-inline text-center"
+                ><input type="radio" name="optradio" id="korea" /> Korea</label
+              >
+              <label class="radio-inline text-center"
+                ><input type="radio" name="optradio" id="japan" /> Japan</label
+              >
+            </div>
+          </div>
+          <!--Scores div-->
+          <div id="scores">
+            <p>correct:<span id="numcorrect"></span></p>
+            <p>incorrect:<span id="numincorrect"></span></p>
+            <p>unanswered:<span id="numunanswered"></span></p>
           </div>
         </div>
         <div class="col-sm-3"></div>
