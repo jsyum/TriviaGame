@@ -7,8 +7,8 @@ $("#startbutton").click(show);
 
 //Show timer and questions div upon clicking startbutton
 function show() {
-  if (document.getElementById("questionsdiv").style.display == "none") {
-    document.getElementById("questionsdiv").style.display = "block";
+  if (document.getElementById("centraldiv").style.display == "none") {
+    document.getElementById("centraldiv").style.display = "block";
     runtimer();
   }
 }
@@ -25,6 +25,12 @@ function decrement() {
   $("#displaytimer").text(number);
 }
 
+setTimeout(timeUp, 61000);
+function timeUp() {
+  $("#displaytimer").text("Time's Up!");
+  clearInterval(intervalId);
+}
+
 //Show correct and incorrect answers upon click
 $(document).ready(function() {
   $("input[type=radio]").click(function() {
@@ -32,18 +38,15 @@ $(document).ready(function() {
       correct++;
       showCorrect();
       alert("Good Job!");
-    } else {
+    } else if (this.value == "Korea" || this.value == "China") {
       incorrect++;
       showIncorrect();
+    } else {
+      unanswered++;
+      showUnanswered();
     }
   });
 });
-// function incorrect() {
-//   if (document.getElementById("china").checked == true) {
-//     incorrect++;
-//     showIncorrect();
-//   }
-// }
 
 //functions to show correct, incorrect, and unanswered
 function showCorrect() {

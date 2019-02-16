@@ -29,11 +29,10 @@ body {
   margin-bottom: 10px;
 }
 #displaytimer {
-  text-align: center;
   color: red;
 }
 
-#questionsdiv {
+#centraldiv {
   text-align: center;
 }
 
