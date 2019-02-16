@@ -41,18 +41,25 @@
           <button type="button" class="btn btn-warning" id="startbutton">
             Start Quiz!
           </button>
-          <!--Radio Buttons-->
+          <!--Timer and questions div-->
           <div id="questionsdiv" style="display:none">
+            <div id="timer">
+              Time remaining (seconds):
+              <span id="displaytimer"></span>
+            </div>
             Ramen is considered the specialized cuisine of which country?
             <div id="radiobuttons">
               <label class="radio-inline text-center"
-                ><input type="radio" name="optradio" id="china" /> China
+                ><input type="radio" name="optradio" id="china" value="China" />
+                China
               </label>
               <label class="radio-inline text-center"
-                ><input type="radio" name="optradio" id="korea" /> Korea</label
+                ><input type="radio" name="optradio" id="korea" value="Korea" />
+                Korea</label
               >
               <label class="radio-inline text-center"
-                ><input type="radio" name="optradio" id="japan" /> Japan</label
+                ><input type="radio" name="optradio" id="japan" value="Japan" />
+                Japan</label
               >
             </div>
           </div>

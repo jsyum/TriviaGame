@@ -26,8 +26,11 @@ body {
   text-align: center;
 }
 #timer {
+  margin-bottom: 10px;
+}
+#displaytimer {
   text-align: center;
-  margin: auto;
+  color: red;
 }
 
 #questionsdiv {
@@ -36,4 +39,9 @@ body {
 
 #radiobuttons {
   display: block;
+}
+
+#submitbutton {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
