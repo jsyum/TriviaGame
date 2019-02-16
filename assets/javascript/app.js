@@ -11,9 +11,9 @@ var question2 = {
   choices: ["Japan", "Thailand", "Korea"],
   correctanswer: "Thailand"
 };
-var questions = [question1, question2];
+var questionsArray = [question1, question2];
 var position = 0;
-console.log(questions[position]);
+// console.log(questions[position]);
 
 //use jQuery to reveal the questions div on clicking "startbutton"
 $("#startbutton").click(show);
@@ -38,22 +38,25 @@ function show() {
 //if it is wrong alert incorrect
 function showQuestionAndAnswers() {
   //show question
-  var currentQuestion = questions[position];
-  $("#question").text(currentQuestion.question);
+  for (let i = 0; i < questionsArray.length; i++) {
+    console.log(currentQuestion);
+    var currentQuestion = questionsArray[i];
+    $("#question").text(currentQuestion.question);
 
-  //show answers
-  //whatever input has this id, set the value to this choice
-  var option1 = currentQuestion.choices[0];
-  $("#option1label").text(option1);
-  $("#option1").attr("value", option1);
+    //show answers
+    //whatever input has this id, set the value to this choice
+    var option1 = currentQuestion.choices[0];
+    $("#option1label").text(option1);
+    $("#option1").attr("value", option1);
 
-  var option2 = currentQuestion.choices[1];
-  $("#option2label").text(option2);
-  $("#option2").attr("value", option2);
+    var option2 = currentQuestion.choices[1];
+    $("#option2label").text(option2);
+    $("#option2").attr("value", option2);
 
-  var option3 = currentQuestion.choices[2];
-  $("#option3label").text(option3);
-  $("#option3").attr("value", option3);
+    var option3 = currentQuestion.choices[2];
+    $("#option3label").text(option3);
+    $("#option3").attr("value", option3);
+  }
 }
 
 $("input[type=radio]").click(function() {
@@ -62,8 +65,16 @@ $("input[type=radio]").click(function() {
   //   showCorrect();
   //   alert("Good Job!");
   // }
-  console.log(this.value);
+  for (let i = 0; i < questionsArray.length; i++) {
+    console.log(this.value);
+    if (this.value === questionsArray[i].correctanswer) {
+      console.log("you won!");
+    }
+  }
 });
+
+//Submit button event listener
+// $("#submitbutton").click(showQuestionAndAnswers());
 
 // Countdown timer
 var number = 60;
@@ -112,4 +123,4 @@ function showUnanswered() {
   document.getElementById("numunanswered").innerHTML = unanswered;
 }
 
-showQuestionAndAnswers();
+// showQuestionAndAnswers();
