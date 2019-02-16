@@ -38,26 +38,29 @@ function show() {
 //if it is wrong alert incorrect
 function showQuestionAndAnswers() {
   //show question
-  for (let i = 0; i < questionsArray.length; i++) {
-    console.log(currentQuestion);
-    var currentQuestion = questionsArray[i];
-    $("#question").text(currentQuestion.question);
+  var currentQuestion = questionsArray[position];
+  $("#question").text(currentQuestion.question);
 
-    //show answers
-    //whatever input has this id, set the value to this choice
-    var option1 = currentQuestion.choices[0];
-    $("#option1label").text(option1);
-    $("#option1").attr("value", option1);
+  //show answers
+  //whatever input has this id, set the value to this choice
+  var option1 = currentQuestion.choices[0];
+  $("#option1label").text(option1);
+  $("#option1").attr("value", option1);
 
-    var option2 = currentQuestion.choices[1];
-    $("#option2label").text(option2);
-    $("#option2").attr("value", option2);
+  var option2 = currentQuestion.choices[1];
+  $("#option2label").text(option2);
+  $("#option2").attr("value", option2);
 
-    var option3 = currentQuestion.choices[2];
-    $("#option3label").text(option3);
-    $("#option3").attr("value", option3);
-  }
+  var option3 = currentQuestion.choices[2];
+  $("#option3label").text(option3);
+  $("#option3").attr("value", option3);
 }
+
+// Submit button event listener
+$("#submitbutton").click(function() {
+  position++;
+  showQuestionAndAnswers();
+});
 
 $("input[type=radio]").click(function() {
   // if (this.value == "") {
@@ -73,8 +76,8 @@ $("input[type=radio]").click(function() {
   }
 });
 
-//Submit button event listener
-// $("#submitbutton").click(showQuestionAndAnswers());
+// Submit button event listener
+// $("#submitbutton").click(position++);
 
 // Countdown timer
 var number = 60;
@@ -122,5 +125,3 @@ function showIncorrect() {
 function showUnanswered() {
   document.getElementById("numunanswered").innerHTML = unanswered;
 }
-
-// showQuestionAndAnswers();
