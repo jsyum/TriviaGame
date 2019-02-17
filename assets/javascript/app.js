@@ -75,6 +75,9 @@ function checkResults() {
   } else {
     incorrect++;
     showIncorrect();
+    alert(
+      "Sorry! The correct answer was " + questionsArray[position].correctanswer
+    );
   }
 }
 
