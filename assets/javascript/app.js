@@ -13,7 +13,6 @@ var question2 = {
 };
 var questionsArray = [question1, question2];
 var position = 0;
-// console.log(questions[position]);
 
 //use jQuery to reveal the questions div on clicking "startbutton"
 $("#startbutton").click(show);
@@ -40,6 +39,7 @@ function showQuestionAndAnswers() {
   //show question
   var currentQuestion = questionsArray[position];
   $("#question").text(currentQuestion.question);
+  console.log(questionsArray[position]);
 
   //show answers
   //whatever input has this id, set the value to this choice
