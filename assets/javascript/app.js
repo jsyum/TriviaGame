@@ -7,11 +7,29 @@ var question1 = {
   correctanswer: "Japan"
 };
 var question2 = {
-  question: "Pad thai is considered the specialized cuisine of which country?",
-  choices: ["Japan", "Thailand", "Korea"],
-  correctanswer: "Thailand"
+  question: "Which was the first noodle eaten in space?",
+  choices: ["Spaghetti", "Ramen", "Macaroni"],
+  correctanswer: "Ramen"
 };
-var questionsArray = [question1, question2];
+var question3 = {
+  question:
+    "The yellow tinge of ramen noodles is from being made with water infused with",
+  choices: ["Baking Soda", "Salt", "Sugar"],
+  correctanswer: "Baking Soda"
+};
+var question4 = {
+  question: "At the end of WWII, ramen was commonly distributed through",
+  choices: ["Grocery stores", "Small businesses", "The black market"],
+  correctanswer: "The black market"
+};
+var question5 = {
+  question:
+    "Living to the age of 96, Momofuku Ando (inventor of instant ramen) attributed his long life to",
+  choices: ["Exercise", "Eating ramen almost daily", "Good sleep"],
+  correctanswer: "Eating ramen almost daily"
+};
+
+var questionsArray = [question1, question2, question3, question4, question5];
 var position = 0;
 
 //use jQuery to reveal the questions div on clicking "startbutton"
@@ -26,15 +44,7 @@ function show() {
   }
 }
 
-//research labels and radio inputs, associating labels with radio inputs, labels and radio inputs getting data form
-//radio input value? (one id for label? one for input?)
-
-//next steps:
-//user clicks on an input
-//user clicks submit
-//input.value is checked
-//if it is the right answer alert correct
-//if it is wrong alert incorrect
+// Displays new set of questions and answers
 function showQuestionAndAnswers() {
   //show question
   var currentQuestion = questionsArray[position];
@@ -81,9 +91,6 @@ function checkResults() {
   }
 }
 
-// Submit button event listener
-// $("#submitbutton").click(position++);
-
 // Countdown timer
 var number = 60;
 var intervalId;
@@ -102,23 +109,6 @@ function timeUp() {
   $("#displaytimer").text("Time's Up!");
   clearInterval(intervalId);
 }
-
-//Show correct and incorrect answers upon click
-// $(document).ready(function() {
-//   $("#submitbutton").click(function() {
-//     if (input[(type = radio)].value == "Japan") {
-//       correct++;
-//       showCorrect();
-//       alert("Good Job!");
-//     } else if (this.value == "Korea" || this.value == "China") {
-//       incorrect++;
-//       showIncorrect();
-//     } else {
-//       unanswered++;
-//       showUnanswered();
-//     }
-//   });
-// });
 
 //functions to show correct, incorrect, and unanswered
 function showCorrect() {
