@@ -58,23 +58,25 @@ function showQuestionAndAnswers() {
 
 // Submit button event listener
 $("#submitbutton").click(function() {
+  checkResults();
   position++;
   showQuestionAndAnswers();
 });
 
-$("input[type=radio]").click(function() {
-  // if (this.value == "") {
-  //   correct++;
-  //   showCorrect();
-  //   alert("Good Job!");
-  // }
-  for (let i = 0; i < questionsArray.length; i++) {
-    console.log(this.value);
-    if (this.value === questionsArray[i].correctanswer) {
-      console.log("you won!");
-    }
+//function to check results
+function checkResults() {
+  if (
+    $("input:radio[name='optradio']:checked").val() ==
+    questionsArray[position].correctanswer
+  ) {
+    correct++;
+    showCorrect();
+    alert("Good Job!");
+  } else {
+    incorrect++;
+    showIncorrect();
   }
-});
+}
 
 // Submit button event listener
 // $("#submitbutton").click(position++);
