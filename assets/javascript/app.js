@@ -138,7 +138,7 @@ function decrement() {
   $("#displaytimer").text(number);
 }
 
-setTimeout(timeUp, 43000);
+setTimeout(timeUp, 42000);
 function timeUp() {
   $("#displaytimer").text("Time's Up!");
   clearInterval(intervalId);
