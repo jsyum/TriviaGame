@@ -2,29 +2,29 @@ var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
 var question1 = {
-  question: "Ramen is considered the specialized cuisine of which country?",
+  question: "1. Ramen is considered the specialized cuisine of which country?",
   choices: ["Japan", "China", "Korea"],
   correctanswer: "Japan"
 };
 var question2 = {
-  question: "Which was the first noodle eaten in space?",
+  question: "2. Which was the first noodle eaten in space?",
   choices: ["Spaghetti", "Ramen", "Macaroni"],
   correctanswer: "Ramen"
 };
 var question3 = {
   question:
-    "The yellow tinge of ramen noodles is from being made with water infused with",
+    "3. The yellow tinge of ramen noodles is from being made with water infused with",
   choices: ["Baking Soda", "Salt", "Sugar"],
   correctanswer: "Baking Soda"
 };
 var question4 = {
-  question: "At the end of WWII, ramen was commonly distributed through",
+  question: "4. At the end of WWII, ramen was commonly distributed through",
   choices: ["Grocery stores", "Small businesses", "The black market"],
   correctanswer: "The black market"
 };
 var question5 = {
   question:
-    "Living to the age of 96, Momofuku Ando (inventor of instant ramen) attributed his long life to",
+    "5. Living to the age of 96, Momofuku Ando (inventor of instant ramen) attributed his long life to",
   choices: ["Exercise", "Eating ramen almost daily", "Good sleep"],
   correctanswer: "Eating ramen almost daily"
 };
@@ -41,6 +41,8 @@ function show() {
     document.getElementById("centraldiv").style.display = "block";
     showQuestionAndAnswers();
     runtimer();
+    $("#directions").remove();
+    $("#startbutton").remove();
   }
 }
 // Show results div
@@ -118,7 +120,7 @@ function checkResults() {
 }
 
 // Countdown timer
-var number = 60;
+var number = 41;
 var intervalId;
 function runtimer() {
   clearInterval(intervalId);
@@ -130,10 +132,19 @@ function decrement() {
   $("#displaytimer").text(number);
 }
 
-setTimeout(timeUp, 61000);
+setTimeout(timeUp, 43000);
 function timeUp() {
   $("#displaytimer").text("Time's Up!");
   clearInterval(intervalId);
+  $("#question").text("Your Results!");
+  $("#radiobuttons").text(
+    "correct:" +
+      correct +
+      "   incorrect:" +
+      incorrect +
+      "   unanswered:" +
+      unanswered
+  );
 }
 
 //functions to show correct, incorrect, and unanswered

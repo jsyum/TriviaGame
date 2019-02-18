@@ -14,6 +14,10 @@ body {
   width: 50%;
 }
 
+#directions {
+  margin-top: 15px;
+  text-align: center;
+}
 #startbutton {
   display: block;
   margin-right: auto;
@@ -26,6 +30,7 @@ body {
   text-align: center;
 }
 #timer {
+  margin-top: 15px;
   margin-bottom: 10px;
 }
 #displaytimer {
