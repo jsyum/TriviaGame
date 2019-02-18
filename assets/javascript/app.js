@@ -28,16 +28,8 @@ var question5 = {
   choices: ["Exercise", "Eating ramen almost daily", "Good sleep"],
   correctanswer: "Eating ramen almost daily"
 };
-var question6 = {};
 
-var questionsArray = [
-  question1,
-  question2,
-  question3,
-  question4,
-  question5,
-  question6
-];
+var questionsArray = [question1, question2, question3, question4, question5];
 var position = 0;
 
 //use jQuery to reveal the questions div on clicking "startbutton"
@@ -84,8 +76,21 @@ function showQuestionAndAnswers() {
 $("#submitbutton").click(function() {
   checkResults();
   position++;
-  showQuestionAndAnswers();
-  $('input[name="optradio"]').prop("checked", false);
+  if (position < 5) {
+    showQuestionAndAnswers();
+    $('input[name="optradio"]').prop("checked", false);
+  }
+  if (position === 5) {
+    $("#question").text("Your Results!");
+    $("#radiobuttons").text(
+      "correct:" +
+        correct +
+        "   incorrect:" +
+        incorrect +
+        "   unanswered:" +
+        unanswered
+    );
+  }
 });
 
 //function to check results
