@@ -28,8 +28,16 @@ var question5 = {
   choices: ["Exercise", "Eating ramen almost daily", "Good sleep"],
   correctanswer: "Eating ramen almost daily"
 };
+var question6 = {};
 
-var questionsArray = [question1, question2, question3, question4, question5];
+var questionsArray = [
+  question1,
+  question2,
+  question3,
+  question4,
+  question5,
+  question6
+];
 var position = 0;
 
 //use jQuery to reveal the questions div on clicking "startbutton"
@@ -41,6 +49,12 @@ function show() {
     document.getElementById("centraldiv").style.display = "block";
     showQuestionAndAnswers();
     runtimer();
+  }
+}
+// Show results div
+function showResultsDiv() {
+  if (document.getElementById("scores").style.display == "none") {
+    document.getElementById("scores").style.display = "block";
   }
 }
 
@@ -126,4 +140,24 @@ function showIncorrect() {
 }
 function showUnanswered() {
   document.getElementById("numunanswered").innerHTML = unanswered;
+}
+
+//function to hide "centraldiv" and show "scores" div when position[5]
+function gameOver() {
+  if ((position = 5)) {
+    gameOverHideCentral();
+    gameOverShowScores();
+  }
+}
+
+function gameOverHideCentral() {
+  if ((document.getElementById("centraldiv").style.display = "block")) {
+    document.getElementById("centraldiv").style.display == "none";
+  }
+}
+
+function gameOverShowScores() {
+  if (document.getElementById("scores").style.display == "none") {
+    document.getElementById("scores").style.display = "block";
+  }
 }
