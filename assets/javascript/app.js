@@ -93,6 +93,7 @@ $("#submitbutton").click(function() {
         unanswered
     );
     $("#submitbutton").text("Play again?");
+    $("#submitbutton").click(resetVariables());
   }
 });
 
@@ -159,22 +160,11 @@ function showUnanswered() {
   document.getElementById("numunanswered").innerHTML = unanswered;
 }
 
-//function to hide "centraldiv" and show "scores" div when position[5]
-function gameOver() {
-  if ((position = 5)) {
-    gameOverHideCentral();
-    gameOverShowScores();
-  }
-}
-
-function gameOverHideCentral() {
-  if ((document.getElementById("centraldiv").style.display = "block")) {
-    document.getElementById("centraldiv").style.display == "none";
-  }
-}
-
-function gameOverShowScores() {
-  if (document.getElementById("scores").style.display == "none") {
-    document.getElementById("scores").style.display = "block";
-  }
+//function reset variables
+function resetVariables() {
+  position = 0;
+  var correct = 0;
+  var incorrect = 0;
+  var unanswered = 0;
+  var number = 41;
 }
