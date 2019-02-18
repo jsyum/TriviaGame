@@ -82,6 +82,9 @@ function checkResults() {
     correct++;
     showCorrect();
     alert("Good Job!");
+  } else if (!$("input[name='optradio']:checked").val()) {
+    unanswered++;
+    showUnanswered();
   } else {
     incorrect++;
     showIncorrect();
