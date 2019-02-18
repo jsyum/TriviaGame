@@ -92,6 +92,7 @@ $("#submitbutton").click(function() {
         "   unanswered:" +
         unanswered
     );
+    $("#submitbutton").text("Play again?");
   }
 });
 
