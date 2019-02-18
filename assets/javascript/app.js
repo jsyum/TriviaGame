@@ -151,6 +151,11 @@ function timeUp() {
       "   unanswered:" +
       unanswered
   );
+  $("#gudetama").remove();
+  showGif();
+  $("#submitbutton").remove();
+  showReplay();
+  $("#replaybutton").click(reset);
 }
 
 //functions to show correct, incorrect, and unanswered
