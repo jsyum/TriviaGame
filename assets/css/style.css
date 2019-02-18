@@ -8,12 +8,18 @@ body {
   width: 100%;
 }
 
-.gudetama {
+#gudetama {
   display: block;
   margin: auto;
   width: 50%;
 }
 
+#egg {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
 #directions {
   margin-top: 15px;
   text-align: center;

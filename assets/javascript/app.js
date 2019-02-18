@@ -95,6 +95,9 @@ $("#submitbutton").click(function() {
     $("#submitbutton").remove();
     showReplay();
     $("#replaybutton").click(reset);
+    $("#gudetama").remove();
+    showGif();
+    $("#timer").remove();
   }
 });
 
@@ -170,5 +173,12 @@ function reset() {
 function showReplay() {
   if (document.getElementById("replaybutton").style.display == "none") {
     document.getElementById("replaybutton").style.display = "block";
+  }
+}
+
+//function show gif
+function showGif() {
+  if (document.getElementById("egg").style.display == "none") {
+    document.getElementById("egg").style.display = "block";
   }
 }
