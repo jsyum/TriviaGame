@@ -49,3 +49,9 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+#replaybutton {
+  margin-top: 10px;
+  display: block;
+  margin: auto;
+}

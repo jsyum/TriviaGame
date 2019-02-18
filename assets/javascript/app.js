@@ -92,8 +92,9 @@ $("#submitbutton").click(function() {
         "   unanswered:" +
         unanswered
     );
-    $("#submitbutton").text("Play again?");
-    $("#submitbutton").click(resetVariables());
+    $("#submitbutton").remove();
+    showReplay();
+    $("#replaybutton").click(reset);
   }
 });
 
@@ -160,11 +161,14 @@ function showUnanswered() {
   document.getElementById("numunanswered").innerHTML = unanswered;
 }
 
-//function reset variables
-function resetVariables() {
-  position = 0;
-  var correct = 0;
-  var incorrect = 0;
-  var unanswered = 0;
-  var number = 41;
+//function reset to beginning of game
+function reset() {
+  location.reload(true);
+}
+
+//function show replay
+function showReplay() {
+  if (document.getElementById("replaybutton").style.display == "none") {
+    document.getElementById("replaybutton").style.display = "block";
+  }
 }
