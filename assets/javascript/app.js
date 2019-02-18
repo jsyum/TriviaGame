@@ -71,6 +71,7 @@ $("#submitbutton").click(function() {
   checkResults();
   position++;
   showQuestionAndAnswers();
+  $('input[name="optradio"]').prop("checked", false);
 });
 
 //function to check results
@@ -82,15 +83,18 @@ function checkResults() {
     correct++;
     showCorrect();
     alert("Good Job!");
+    console.log(correct, incorrect, unanswered);
   } else if (!$("input[name='optradio']:checked").val()) {
     unanswered++;
     showUnanswered();
+    console.log(correct, incorrect, unanswered);
   } else {
     incorrect++;
     showIncorrect();
     alert(
       "Sorry! The correct answer was " + questionsArray[position].correctanswer
     );
+    console.log(correct, incorrect, unanswered);
   }
 }
 
